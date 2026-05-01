@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="mb-4">Gestor de Clientes CRM</h1>
+        <button class="btn btn-primary mb-3" onclick="agregar()">+ Agregar Cliente</button>
+        <table class="table table-striped bg-white">
+            <thead><tr><th>Nombre</th><th>Email</th><th>Teléfono</th><th>Acción</th></tr></thead>
+            <tbody id="tabla">
+                <tr><td>Juan Pérez</td><td>juan@empresa.com</td><td>+1 305 555 1234</td><td><button class="btn btn-sm btn-danger">Borrar</button></td></tr>
+                <tr><td>María García</td><td>maria@negocio.com</td><td>+1 786 555 5678</td><td><button class="btn btn-sm btn-danger">Borrar</button></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function agregar(){
+            let nombre = prompt("Nombre del cliente:");
+            if(nombre){
+                document.getElementById('tabla').innerHTML += `<tr><td>${nombre}</td><td>nuevo@email.com</td><td>+1 000 000 0000</td><td><button class="btn btn-sm btn-danger">Borrar</button></td></tr>`;
+            }
+        }
+    </script>
+</body>
+</html>
